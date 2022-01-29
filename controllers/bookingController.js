@@ -81,7 +81,6 @@ exports.allbooking=async (req,res)=>{
         return res.status(200).json({msg:"all booking get successfully",allboking})
     } catch (error) {
         console.log(error)
-        return res.status(400).json({msg:"something went wrong"})       
-        
+        return res.status(400).json({msg:"something went wrong"})          
     }
 }
