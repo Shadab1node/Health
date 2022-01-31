@@ -15,7 +15,7 @@ const createToken = (user) => {
 
 exports.sendotp=async (req,res)=>{
 try {
-  const OTP = otpGenerator.generate(6, { digits: true, upperCaseAlphabets: false, specialChars: false });
+  const OTP = otpGenerator.generate(4, { digits: true, upperCaseAlphabets: false, specialChars: false });
 
   let user = await User.findOne({
     number: req.body.number

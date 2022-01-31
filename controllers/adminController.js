@@ -50,7 +50,7 @@ exports.adminlogin = async (req, res) => {
       try {
         const checkUser = await Admin.findOne({ email });
         if (checkUser) {
-        const OTP = otpGenerator.generate(6, { digits: true, upperCaseAlphabets: false, specialChars: false });
+        const OTP = otpGenerator.generate(4, { digits: true, upperCaseAlphabets: false, specialChars: false });
 
           let otpData = new adminOtp({
             email,
