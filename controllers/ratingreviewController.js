@@ -6,6 +6,7 @@ exports.addrating=async (req,res)=>{
     try {
         const rating=new Rating(req.body)
         rating.user=req.user._id
+        rating.package=req.body.package
         rating.save()
         return res.status(200).json({msg:"Rating and Review add successfully",rating})
     } catch (error) {

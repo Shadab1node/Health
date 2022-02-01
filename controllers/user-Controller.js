@@ -52,28 +52,28 @@ try {
 // VERIFY OTP
 
 exports.verifyOtp = async (req, res) => {
- try {
-  var { number, otp } = req.body;
-
-  let newotp = await Otp.findOne({ number: number, otp: otp });
-  if(!newotp){
-    return res.status(400).json({errors: 'wrong otp'})
+  try {
+   var { number, otp } = req.body;
+ 
+   let newotp = await Otp.findOne({ number: number, otp: otp });
+   if(!newotp){
+     return res.status(400).json({errors: 'wrong otp'})
+   }
+   if (newotp) {
+       var number = req.body.number;
+       let user = await User.findOne({ number });
+       console.log(user.number)
+       const token = createToken(user);
+       const OTPDelete = await Otp.deleteOne({
+         number:number
+     });
+       return res.status(200).json({ msg: "user login successfully",user,token });
   }
-  if (newotp) {
-      var number = req.body.number;
-      let user = await User.findOne({ number });
-      console.log(user.number)
-      const token = createToken(user);
-      const OTPDelete = await Otp.deleteOne({
-        number:number
-    });
-      return res.status(200).json({ msg: "user login successfully",user,token });
- }
- } catch (error) {
-   console.log(error)
-  return res.status(400).json({ errors: [{ msg: "Token Expired" }] });
- }
+  } catch (error) {
+    console.log(error)
+   return res.status(400).json({ errors: [{ msg: "Token Expired" }] });
   }
+   }
 // ADD USER DETAIL
 
 exports.adduser=async (req,res)=>{

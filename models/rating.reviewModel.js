@@ -7,11 +7,15 @@ const RatingSchema=new Schema({
         type: Schema.Types.ObjectId,
         ref: 'user'
     },
+    package:{
+        type:Schema.Types.ObjectId,
+        ref:"package"
+    },
     review:{
         type:String
     },
     rating:{
-        type:String
+        type:Number
     },
     active: {
         type: Boolean,

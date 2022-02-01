@@ -5,7 +5,7 @@ const bookingSchema=new Schema({
   bookingdate:String,
   bookigtime:String,
   patientname:String,
-  patientnumber:Number,
+  patientnumber:String,
     user: {
         type: Schema.Types.ObjectId,
         ref: 'user'
@@ -25,7 +25,7 @@ const bookingSchema=new Schema({
             enum:["male","female"]
           },
           number:{
-            type:Number,
+            type:String,
           },
           email:String
           },
