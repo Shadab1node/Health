@@ -72,14 +72,15 @@ exports.adminlogin = async (req, res) => {
   
   const mailer = (email, otp) => {
     let mailTransporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.sendgrid.net",
+      port:587,
       auth: {
-        user: "shadabakhtar476@gmail.com",
-        pass: "razaraza",
+        user: "apikey",
+        pass: "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",
       },
     });
     var mailOptions = {
-      from: "shadabakhtar476@gmail.com",
+      from: "node1flyweis@gmail.com",
       to: email,
       subject: "OTP mail",
       text: otp,
