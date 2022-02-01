@@ -17,7 +17,7 @@ exports.addpackage=async (req,res)=>{
 
 exports.getpackage=async (req,res)=>{
     try {
-        const getpackage=await Package.find(req.user._id).populate("categoryId")
+        const getpackage=await Package.findById({_id:req.params.id}).populate("categoryId")
         return res.status(200).json({ msg:'package get successfully',getpackage})
     } catch (error) {
         console.log(error)

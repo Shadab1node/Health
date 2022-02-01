@@ -6,6 +6,12 @@ const packageSchema=new Schema({
         type:Schema.Types.ObjectId,
         ref:"category"
     },
+    recommended:{
+        type:String
+    },
+    agegroup:{
+        type:String
+    },
     field1:{
         type:String,
         required:true
