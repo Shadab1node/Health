@@ -31,7 +31,7 @@ const packageSchema=new Schema({
     field6:{
         type:String,
     },
-    field7:{
+    description:{
         type:String,
     }
 },{
