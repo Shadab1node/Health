@@ -12,7 +12,7 @@ const bookingSchema=new Schema({
     },
     package:{
       type:Schema.Types.ObjectId,
-      ref:"package" 
+      ref:"package"     
     },
     member: {  
       type: 
