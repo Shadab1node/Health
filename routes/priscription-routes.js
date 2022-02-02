@@ -15,7 +15,7 @@ var addpriscription = multer({ storage: addpriscription });
 // ROUTE FOR Report
 
 router.route("/addpriscription").post(auth.adminloggedIn,addpriscription.single("image"),Controller.addpriscription);
-router.route("/getpriscription").get(auth.adminloggedIn,Controller.view);
+router.route("/getpriscription").get(auth.userloggedIn,Controller.view);
 
 
 module.exports = router;

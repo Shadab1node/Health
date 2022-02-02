@@ -15,7 +15,7 @@ var addreceipt = multer({ storage: addreceipt });
 // ROUTE FOR Report
 
 router.route("/addreceipt").post(auth.adminloggedIn,addreceipt.single("image"),Controller.addreceipt);
-router.route("/getreceipt").get(auth.adminloggedIn,Controller.view);
+router.route("/getreceipt").get(auth.userloggedIn,Controller.view);
 
 
 module.exports = router;
