@@ -15,7 +15,7 @@ var addreport = multer({ storage: addreport });
 // ROUTE FOR Report
 
 router.route("/addreport").post(auth.adminloggedIn,addreport.single("image"),Controller.addreport);
-router.route("/getReport").get(auth.adminloggedIn,Controller.view);
+router.route("/getReport").get(auth.userloggedIn,Controller.view);
 
 
 module.exports = router;
