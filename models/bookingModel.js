@@ -22,7 +22,6 @@ const bookingSchema=new Schema({
           DOB:String,
           gender:{
             type:String,
-            enum:["male","female"]
           },
           number:{
             type:String,
