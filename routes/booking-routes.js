@@ -10,5 +10,4 @@ router.route("/updatebooking").put(auth.userloggedIn,Controller.updatebooking)
 router.route("/deletebooking").delete(auth.userloggedIn,Controller.deletebooking)
 router.route("/allbooking").get(auth.adminloggedIn,Controller.allbooking)
 
-
 module.exports = router;
