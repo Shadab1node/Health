@@ -33,7 +33,7 @@ exports.addpriscription = async (req, res) => {
 exports.view = async (req, res) => {
   try {
     const viewpriscription = await Priscription.find({});
-    return res.status(200).json({msg:"successfully get priscription",viewpriscription});
+    return res.status(200).json(viewpriscription);
   } catch (error) {
     return res.status(400).json({ msg: error.message });
   }

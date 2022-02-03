@@ -33,7 +33,7 @@ exports.addreceipt = async (req, res) => {
 exports.view = async (req, res) => {
   try {
     const viewreceipt = await Receipt.find({});
-    return res.status(200).json({msg:"successfully get receipt",viewreceipt});
+    return res.status(200).json(viewreceipt);
   } catch (error) {
     return res.status(400).json({ msg: error.message });
   }
