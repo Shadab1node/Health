@@ -26,7 +26,7 @@ router.route("/adduser").post(auth.userloggedIn,Controller.adduser)
 router.route("/getuser").get(auth.userloggedIn,Controller.getuser)
 router.route("/updateuser").put(auth.userloggedIn,image.single("image"),Controller.updateuser)
 router.route("/deleteuser").delete(auth.userloggedIn,Controller.deleteuser)
-router.route("/alluser").get(auth.adminloggedIn,Controller.getalluser)
+router.route("/alluser").get(Controller.getalluser)
 
 
 module.exports = router;

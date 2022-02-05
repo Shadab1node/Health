@@ -28,6 +28,7 @@ let ratingRoutes=require("./routes/rating.review-routes")
 let bannerRoutes = require("./routes/banner-routes");
 let profileRoutes=require("./routes/profile-routes")
 let diseaseRoutes=require("./routes/diasese-routes")
+let toppackageRoutes=require("./routes/toppackage-routes")
 
 var port = process.env.PORT || 9999;
 app.use("/api",
@@ -44,7 +45,8 @@ commentRoutes,
 ratingRoutes,
 bannerRoutes,
 profileRoutes,
-diseaseRoutes
+diseaseRoutes,
+toppackageRoutes
  )
 
 app.listen(port, function () {console.log("Running on port " + port)});
